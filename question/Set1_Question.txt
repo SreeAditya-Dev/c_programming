@@ -1,0 +1,22 @@
+Problem Statement: Student Grades Database
+
+Imagine you are tasked with developing a program to manage and analyze student grades for a school. You need to store and process information about each student's performance in multiple subjects.
+
+Each student takes multiple subjects, such as Mathematics, English, Science, and History.
+For each subject, students receive grades on various assessments (exams, quizzes, projects).
+    1. You need to calculate the average score for each student in each subject and determine their overall performance.
+    2. You must generate reports, including the class average for each subject and the top-performing students.
+    3. Give statistics reports on the student list based on grading level.
+    4. Give a suggesstion to the faculty for each subject which set of students need to be focused
+
+
+
+Problem Statement: Sales Data Analysis
+
+You are working for a retail company, and your task is to analyze sales data for multiple products and stores. The company operates in different regions and offers a variety of products.
+
+The company has several stores in different locations, and each store sells multiple products.
+    1. For each product, you need to track sales data over time, including daily sales and monthly sales.
+    2. You want to generate reports that show the best-selling products, the highest-earning stores, and trends in sales over different months.
+    3. You also need to identify low-performing products or stores that may require attention.
+    4. Find the stores that are need to improvised based on sales report.
