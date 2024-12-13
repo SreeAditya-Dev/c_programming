@@ -41,8 +41,7 @@ int main(int argc, char *argv[]) {
         printf("\n");
     }
 
-    for (int i = 0; i < rows; i++) {./matrix_program 2 2 1 2 3 4
-
+    for (int i = 0; i < rows; i++) {
         free(matrix[i]);
     }
     free(matrix);

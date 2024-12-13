@@ -2,7 +2,7 @@
 
 void main(){
     long int a;
-    printf("enter the two number to swap:");
+    printf("enter the number");
     scanf("%ld",&a);
     
     if (a%2==0){
