@@ -2,49 +2,62 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-    if (argc < 3) {
+    if (argc != 19) {
+        printf("Error: Please provide exactly 18 integers as command-line arguments.\n");
         return 1;
     }
 
-    int rows = 0;
-    int cols = 0;
+    int num[3][3][3];
+    int inputnum[18];
+    int index = 0;
 
-    for (char *p = argv[1]; *p; p++) {
-        rows = rows * 10 + (*p - '0');
-    }
-    for (char *p = argv[2]; *p; p++) {
-        cols = cols * 10 + (*p - '0');
-    }
-
-    int **matrix;
-    matrix = (int **)malloc(rows * sizeof(int *));
-    for (int i = 0; i < rows; i++) {
-        matrix[i] = (int *)malloc(cols * sizeof(int));
+    // Convert command-line arguments to integers and store in inputnum[]
+    for (int i = 1; i < argc; i++) {
+        inputnum[i-1] = atoi(argv[i]);
     }
 
-    int index = 3;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            int value = 0;
-            for (char *p = argv[index]; *p; p++) {
-                value = value * 10 + (*p - '0');
+    // Fill the first two matrices num[0] and num[1] with inputnum[]
+    for (int k = 0; k < 2; k++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                num[k][i][j] = inputnum[index++];
             }
-            matrix[i][j] = value;
-            index++;
         }
     }
 
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            printf("%d ", matrix[i][j]);
+    // Calculate the sum of the first two matrices and store in num[2]
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            num[2][i][j] = num[0][i][j] + num[1][i][j];
+        }
+    }
+
+    // Display the first matrix
+    printf("Matrix 1:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", num[0][i][j]);
         }
         printf("\n");
     }
 
-    for (int i = 0; i < rows; i++) {
-        free(matrix[i]);
+    // Display the second matrix
+    printf("Matrix 2:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", num[1][i][j]);
+        }
+        printf("\n");
     }
-    free(matrix);
+
+    // Display the sum matrix
+    printf("Sum of Matrices:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", num[2][i][j]);
+        }
+        printf("\n");
+    }
 
     return 0;
 }

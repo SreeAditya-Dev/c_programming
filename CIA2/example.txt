@@ -1,0 +1,3 @@
+This is an eThis is anxample of a file.
+You can cut, copy, paste, duplicate, find, and replace text in this file.
+This is the SECOND line.

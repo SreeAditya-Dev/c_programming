@@ -1,0 +1,11 @@
+def main():
+print("End of program.")
+
+    print("Hello, World!")
+    if True:
+
+        print("This is indented.")
+        for i in range(5):
+
+            print("Loop iteration:", i)
+
